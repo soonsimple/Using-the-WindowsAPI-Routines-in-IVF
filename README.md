@@ -1,4 +1,4 @@
-# 在Intel Visual Fortran（IVF）程序中调用Windows API例程
+# 在Intel &copy; Visual Fortran（IVF）程序中调用Windows API例程
 
 
 本文译自Intel Fortran编译器的参考文档。
