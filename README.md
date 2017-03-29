@@ -77,17 +77,50 @@ USE IFWIN语句使得大多数的Windows例程的所有参数和接口对你的F
 
 IFWINTY模块（IFWIN模块和其他Win32 API模块都包含了该模块）定义了一整套INTEGER类型和REAL类型的KIND常量，这些常量与Windows的WINDOWS.H头文件提供的类型定义相对应。应在INTEGER类型声明和REAL类型声明中使用这些KIND值。下表给出了部分常用Windows类型的对应关系：
 
-Windows数据类型     | 与之等同的Fortran数据类型
--------------------------------------------------
-BOOL, BOOLEAN      | INTEGER(BOOL)
-BYTE               | INTEGER(BYTE)
-CHAR, CCHAR, UCHAR | CHARACTER or INTEGER(UCHAR)
-DWORD              | INTEGER(DWORD)
-ULONG              | INTEGER(ULONG)
-SHORT              | INTEGER(SHORT)
-LPHANDLE           | INTEGER(LPHANDLE)
-PLONG              | INTEGER(PLONG)
-DOUBLE             | REAL(DOUBLE)
+
+<table>
+    <tr>
+        <td>Windows数据类型</td>
+        <td>与之等同的Fortran数据类型</td>
+    </tr>
+    <tr>
+        <td>BOOL, BOOLEAN</td>
+        <td>INTEGER(BOOL)</td>
+    </tr>
+    <tr>
+        <td>BYTE</td>
+        <td>INTEGER(BYTE)</td>
+    </tr>
+    <tr>
+        <td>CHAR, CCHAR, UCHAR</td>
+        <td>CHARACTER or INTEGER(UCHAR)</td>
+    </tr>
+    <tr>
+        <td>DWORD</td>
+        <td>INTEGER(DWORD)</td>
+    </tr>
+    <tr>
+        <td>ULONG</td>
+        <td>INTEGER(ULONG)</td>
+    </tr>
+    <tr>
+        <td>SHORT</td>
+        <td>INTEGER(SHORT)</td>
+    </tr>
+    <tr>
+        <td>LPHANDLE</td>
+        <td>INTEGER(LPHANDLE)</td>
+    </tr>
+    <tr>
+        <td>PLONG</td>
+        <td>INTEGER(PLONG)</td>
+    </tr>
+    <tr>
+        <td>DOUBLE</td>
+        <td>REAL(DOUBLE)</td>
+    </tr>
+</table>
+
 
 
 应使用这些定义好的KIND常量，不要显式地指定KIND数字或设定默认KIND值。
