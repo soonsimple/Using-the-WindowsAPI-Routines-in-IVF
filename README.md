@@ -1,11 +1,12 @@
-#在Intel Visual Fortran（IVF）程序中调用Windows API例程
+# 在Intel Visual Fortran（IVF）程序中调用Windows API例程
 
 
 本文译自Intel Fortran编译器的参考文档。
 
 Intel Visual Fortran提供了绝大部分的Windows API的接口定义模块，这使得在Fortran程序中使用Windows API系统调用变得很容易。
 
-##第一步，在Fortran程序中包含IVF提供的Windows API接口定义
+## 第一步，在Fortran程序中包含IVF提供的Windows API接口定义
+
 IVF提供的接口定义文件包含了Fortran标准例程库和大多数的Windows API例程，存放在标准include目录里。关于Windows API的文档可以在msdn.microsoft.com上找到。
 
 可以按照下面两种方法中的一种，将Windows API接口定义包含到你的Fortran程序中：
@@ -22,7 +23,8 @@ USE IFWIN语句使得大多数的Windows例程的所有参数和接口对你的F
 
     USE KERNEL32, only: GetSystemTime, GetLastError
 
-##第二步，调用Windows API例程
+## 第二步，调用Windows API例程
+
 使用USE语句在你的Fortran程序里包含了IVF提供的接口定义后，就可以调用Windows API例程了。请遵循以下详细指南：
 
 1、仔细查阅你要调用的Windows API例程（如GetSystemTime）的文档，获取下列信息：
@@ -71,7 +73,8 @@ USE IFWIN语句使得大多数的Windows例程的所有参数和接口对你的F
     END PROGRAM
 你可以新建一个Fortran控制台应用程序项目，将上面的代码添加进去，然后编译、查看结果。
 
-##进一步了解数据类型的区别
+## 进一步了解数据类型的区别
+
 IFWINTY模块（IFWIN模块和其他Win32 API模块都包含了该模块）定义了一整套INTEGER类型和REAL类型的KIND常量，这些常量与Windows的WINDOWS.H头文件提供的类型定义相对应。应在INTEGER类型声明和REAL类型声明中使用这些KIND值。下表给出了部分常用Windows类型的对应关系：
 
 Windows数据类型     | 与之等同的Fortran数据类型
@@ -111,7 +114,8 @@ DOUBLE             | REAL(DOUBLE)
 组件命名基本没变。C位域不能直接转换到Fortran；位域集声明为Fortran的INTEGER类型，单个位域在源码文件IFWINTY.F90里标记为注释了。想查看如何将某个Windows声明转换到Fortran，请阅读Include文件夹里相应的.F90文件中的对应声明。
 
 
-##IVF提供的Windows API模块
+## IVF提供的Windows API模块
+
 Intel Visual Fortran提供了下列Windows API模块，与Windows同名导入库相对应：
 
     ADVAPI32
@@ -134,7 +138,7 @@ Intel Visual Fortran提供了下列Windows API模块，与Windows同名导入库
 
 另外，IFOPNGL模块声明了用于Windows系统的OPENGL例程，组件命名为Fortran特有。
 
-###另附IFWIN.F90文件的主要内容：
+### 另附IFWIN.F90文件的主要内容：
 
     MODULE IFWIN
         use advapi32
